@@ -18,7 +18,7 @@ spec:
         app: multiplyapp
     spec:
       containers:
-        - image: energyuktc/multiplyapp
+        - image: energyuktc/multiplyapp:latest
           name: multiplyapp
           resources: {}
 status: {}
