@@ -1,0 +1,8 @@
+version: '2.1'
+
+services:
+  multiply-app:
+    image: multiply-app
+    build: .
+    ports:
+      - 8080:8080
