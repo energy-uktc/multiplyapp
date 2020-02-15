@@ -71,7 +71,7 @@ public class MultiplyNumbersController {
   @ExceptionHandler(value = NumberFormatException.class)
   public ResponseEntity<ErrorModel> exception(NumberFormatException exception) {
     return new ResponseEntity<ErrorModel>(
-        new ErrorModel("Illegal format.Please specify correct number values for operand1 and operand2 parameters."),
+        new ErrorModel("Illegal format...Please specify correct number values for operand1 and operand2 parameters."),
         HttpStatus.BAD_REQUEST);
   }
 }
