@@ -60,6 +60,7 @@ public class MultiplyNumbersController {
 
     result = result.replaceAll("^0+", "").trim();
     if (result.isEmpty()) {
+      // some comment
       response.setResult("0");
       return response;
     }
