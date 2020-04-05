@@ -25,6 +25,7 @@ public class MultiplyNumbersController {
 
     if (operand1.length() == 0 || operand2.length() == 0) {
       response.setResult("0");
+      response.setStatus(HttpStatus.OK.value());
       return response;
     }
     if (operand1.charAt(0) == '-' ^ operand2.charAt(0) == '-') {
@@ -62,17 +63,20 @@ public class MultiplyNumbersController {
     if (result.isEmpty()) {
       // some comment
       response.setResult("0");
+      response.setStatus(HttpStatus.OK.value());
       return response;
     }
 
     response.setResult(sign + result);
+    response.setStatus(HttpStatus.OK.value());
     return response;
   }
 
   @ExceptionHandler(value = NumberFormatException.class)
   public ResponseEntity<ErrorModel> exception(NumberFormatException exception) {
     return new ResponseEntity<ErrorModel>(
-        new ErrorModel("Illegal format..Please specify correct number values for operand1 and operand2 parameters."),
+        new ErrorModel("Illegal format..Please specify correct number values for operand1 and operand2 parameters.",
+            HttpStatus.BAD_REQUEST.value()),
         HttpStatus.BAD_REQUEST);
   }
 }

@@ -9,6 +9,12 @@ public class ErrorModel extends BaseResponse {
     this.errorMessage = errorMessage;
   }
 
+  public ErrorModel(String errorMessage, int status) {
+    super(false);
+    this.errorMessage = errorMessage;
+    this.setStatus(status);
+  }
+
   public String getErrorMessage() {
     return errorMessage;
   }
