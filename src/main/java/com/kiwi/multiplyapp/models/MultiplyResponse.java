@@ -1,7 +1,11 @@
 package com.kiwi.multiplyapp.models;
 
-public class MultiplyResponse {
+public class MultiplyResponse extends BaseResponse {
   private String result;
+
+  public MultiplyResponse() {
+    super(true);
+  }
 
   public String getResult() {
     return result;
